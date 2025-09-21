@@ -16,6 +16,7 @@ Backend/.npm/
 Backend/yarn.lock
 Backend/package-lock.json
 
+# frontend code 
 client/.env
 client/node_modules
 client/build
