@@ -12,6 +12,7 @@ const ResetToken = require("../Modals/ResetToken");
 const crypto = require("crypto");
 const { generateOTP } = require("../router/Extra/mail");
 
+// Add user
 const AddUser = async (req, res) => {
   const error = validationResult(req);
   if (!error.isEmpty()) {
@@ -80,6 +81,7 @@ const AddUser = async (req, res) => {
   // }
 };
 
+// verify otp
 const verifyOtp = async (req, res) => {
   const { user, OTP } = req.body;
   const mainuser = await User.findById(user);
@@ -131,7 +133,7 @@ const userLogin = async (req, res) => {
   //   }
 
   //   try {
-    // console.log(req.body.email);
+  // console.log(req.body.email);
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return res.status(400).json("User doesn't found");

@@ -3,6 +3,7 @@ const Post = require("../Modals/Post");
 const User = require("../Modals/User");
 // const { verifyToken } = require("./verifytoken");
 
+// Create post controller
 const createPost = async (req, res) => {
   try {
     User;
@@ -20,6 +21,7 @@ const createPost = async (req, res) => {
   }
 };
 
+// upload post post controller
 const uploadPostByOneuser = async (req, res) => {
   try {
     const mypost = await Post.find({ user: req.params.id });
